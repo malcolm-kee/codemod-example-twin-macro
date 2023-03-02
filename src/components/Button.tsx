@@ -9,7 +9,7 @@ interface ButtonProps {
 const Button = React.forwardRef<
   HTMLButtonElement,
   ButtonProps & React.ComponentPropsWithoutRef<'button'>
->(function Button({ variant, isSmall, ...props }, forwardedRef) {
+>(function Button({ variant, isSmall, className, ...props }, forwardedRef) {
   return (
     <button
       type="button"
@@ -31,6 +31,7 @@ const Button = React.forwardRef<
         isSmall ? tw`text-sm` : tw`text-lg`,
 
         tw`text-white`,
+        className,
       ]}
       ref={forwardedRef}
     />
